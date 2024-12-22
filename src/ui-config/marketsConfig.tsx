@@ -1,4 +1,4 @@
-import { ChainId } from '@aave/contract-helpers';
+//import { ChainId } from '@aave/contract-helpers';
 import {
   AaveV2Avalanche,
   AaveV2Ethereum,
@@ -23,6 +23,39 @@ import {
   AaveV3ZkSync,
 } from '@bgd-labs/aave-address-book';
 import { ReactNode } from 'react';
+
+export enum ChainId {
+  mainnet = 1,
+  ropsten = 3,
+  rinkeby = 4,
+  goerli = 5,
+  kovan = 42,
+  xdai = 100,
+  polygon = 137,
+  mumbai = 80001,
+  avalanche = 43114,
+  fuji = 43113, // avalanche test network
+  arbitrum_one = 42161,
+  arbitrum_goerli = 421613,
+  arbitrum_sepolia = 421614,
+  fantom = 250,
+  fantom_testnet = 4002,
+  optimism = 10,
+  optimism_sepolia = 11155420,
+  harmony = 1666600000,
+  harmony_testnet = 1666700000,
+  zkevm_testnet = 1402,
+  sepolia = 11155111,
+  scroll_alpha = 534353,
+  //scroll_sepolia = 534351,
+  scroll_sepolia = 31337,
+  scroll = 534352,
+  metis_andromeda = 1088,
+  base = 8453,
+  base_sepolia = 84532,
+  bnb = 56,
+  zksync = 324,
+}
 
 // Enable for premissioned market
 // import { PermissionView } from 'src/components/transactions/FlowCommons/PermissionView';
@@ -490,13 +523,16 @@ export const marketsData: {
       incentives: true,
     },
     addresses: {
-      LENDING_POOL_ADDRESS_PROVIDER: AaveV3ScrollSepolia.POOL_ADDRESSES_PROVIDER,
-      LENDING_POOL: AaveV3ScrollSepolia.POOL,
+      // Take values from aave-v3-origin/reports/XXX
+      // poolAddressesProvider
+      LENDING_POOL_ADDRESS_PROVIDER: '0x63AA51e2808bE96eD022B07836AD5fA097806F29', // AaveV3ScrollSepolia.POOL_ADDRESSES_PROVIDER,
+      // poolProxy
+      LENDING_POOL: '0x837fa0E2AD32D9334C55932b9551623B3A140DDE', // AaveV3ScrollSepolia.POOL,
       WETH_GATEWAY: AaveV3ScrollSepolia.WETH_GATEWAY,
       FAUCET: AaveV3ScrollSepolia.FAUCET,
-      WALLET_BALANCE_PROVIDER: AaveV3ScrollSepolia.WALLET_BALANCE_PROVIDER,
-      UI_POOL_DATA_PROVIDER: AaveV3ScrollSepolia.UI_POOL_DATA_PROVIDER,
-      UI_INCENTIVE_DATA_PROVIDER: AaveV3ScrollSepolia.UI_INCENTIVE_DATA_PROVIDER,
+      WALLET_BALANCE_PROVIDER: '0x7E1a89BCB1B1c77ff68E349348dD0cc3297884d4', //AaveV3ScrollSepolia.WALLET_BALANCE_PROVIDER,
+      UI_POOL_DATA_PROVIDER: '0xe75d6453F67d6467272B5fF7286197702737CD13', //AaveV3ScrollSepolia.UI_POOL_DATA_PROVIDER,
+      UI_INCENTIVE_DATA_PROVIDER: '0x477185F8bB6371903B85f13880c4Aa8Ab8A45F1b', // AaveV3ScrollSepolia.UI_INCENTIVE_DATA_PROVIDER,
       L2_ENCODER: AaveV3ScrollSepolia.L2_ENCODER,
     },
   },

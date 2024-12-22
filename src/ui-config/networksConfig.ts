@@ -1,4 +1,6 @@
-import { ChainId } from '@aave/contract-helpers';
+//import { ChainId } from '@aave/contract-helpers';
+
+import { ChainId } from './marketsConfig';
 
 export type ExplorerLinkBuilderProps = {
   tx?: string;
@@ -56,11 +58,12 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
   [ChainId.sepolia]: {
     name: 'Ethereum Sepolia',
     publicJsonRPCUrl: [
-      'https://eth-sepolia.public.blastapi.io',
-      'https://rpc.sepolia.org',
-      'https://rpc2.sepolia.org',
-      'https://rpc.sepolia.online',
-      'https://www.sepoliarpc.space',
+      'https://1rpc.io/sepolia',
+      //'https://eth-sepolia.public.blastapi.io',
+      //'https://rpc.sepolia.org',
+      //      'https://rpc2.sepolia.org',
+      //'https://rpc.sepolia.online',
+      //'https://www.sepoliarpc.space',
     ],
     baseUniswapAdapter: '0x0',
     baseAssetSymbol: 'ETH',
@@ -302,12 +305,9 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     networkLogoPath: '/icons/networks/optimism.svg',
   },
   [ChainId.scroll_sepolia]: {
-    name: 'Scroll Sepolia',
-    publicJsonRPCUrl: [
-      'https://sepolia-rpc.scroll.io',
-      'https://scroll-sepolia.blockpi.network/v1/rpc/public',
-    ],
-    publicJsonRPCWSUrl: 'wss://sepolia-rpc.scroll.io',
+    name: 'Hacked Scroll',
+    publicJsonRPCUrl: ['http://localhost:8545'],
+    publicJsonRPCWSUrl: 'wss://localhost:8545',
     baseUniswapAdapter: '0x0',
     baseAssetSymbol: 'ETH',
     wrappedBaseAssetSymbol: 'WETH',
